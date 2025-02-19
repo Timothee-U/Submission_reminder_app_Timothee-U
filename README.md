@@ -29,7 +29,7 @@ cd submission_reminder_(the name you entered)
 -----------
 Start the Application
 
-./startup.sh
+Type (./startup.sh)
 
 This will launch the submission reminder system and check for pending assignments.
 **************
