@@ -1,4 +1,4 @@
-# Submission Reminder App
+**# Submission Reminder App
 This project is a shell script-based application designed to help students track their assignment submission deadlines and receive reminders.
 
 Features
@@ -28,5 +28,8 @@ Go to the directory with the application
 cd submission_reminder_(the name you entered)
 -----------
 Start the Application
+
 ./startup.sh
+
 This will launch the submission reminder system and check for pending assignments.
+**************
