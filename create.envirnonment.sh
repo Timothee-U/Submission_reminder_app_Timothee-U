@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# Prompt for user's name
-read -p "Enter your name: " userName
+# ask for user's name
+read -p "Enter a name you prefer: " userName
 
-# Define main directory
+# Define main dir
 SUB_dir="submission_reminder_${userName}"
 
-# Create directory structure
+# Create directory one by one
 mkdir -p "$SUB_dir/config"
 mkdir -p "$SUB_dir/modules"
 mkdir -p "$SUB_dir/app"
 mkdir -p "$SUB_dir/assets"
 
-# Create necessary files
+# Create needed files
 touch "$SUB_dir/config/config.env"
 touch "$SUB_dir/assets/submissions.txt"
 touch "$SUB_dir/app/reminder.sh"
@@ -20,33 +20,33 @@ touch "$SUB_dir/modules/functions.sh"
 touch "$SUB_dir/startup.sh"
 
 
-# Populate config.env
+# config.env
 cat << EOF > "$SUB_dir/config/config.env"
 # This is the config file
 ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
 EOF
 
-# Populate submissions.txt with sample student records
+# submissions.txt with some student records
 cat << EOF > "$SUB_dir/assets/submissions.txt"
 student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
 Chiagoziem, Git, submitted
-Divine, Shell Navigation, not submitted
-Anissa, Shell Basics, submitted
-Tesy, Shell Navigation, not submitted
-Kevine, Shell Navigation, not submitted
-Darcy, Shell Navigation, not submitted
-Sarah, Shell Navigation, not submitted
-Fallon, Shell Navigation, submitted
+Chris, Shell Navigation, not submitted
+Karake, Shell Basics, submitted
+Prince, Shell Navigation, not submitted
+Timothee, Shell Navigation, not submitted
+Nazira, Shell Navigation, not submitted
+Denyse, Shell Navigation, submitted
 EOF
 
-# Populate functions.sh
+# functions.sh
 cat << 'EOF' > "$SUB_dir/modules/functions.sh"
 #!/bin/bash
 
 # Function to read submissions file and output students who have not submitted
-function check_submissions {
+ 
+ function check_submissions {
     local submissions_file=$1
     echo "Checking submissions in $submissions_file"
 
@@ -65,7 +65,7 @@ function check_submissions {
 }
 EOF
 
-# Populate reminder.sh
+# reminder.sh
 cat << 'EOF' > "$SUB_dir/app/reminder.sh"
 #!/bin/bash
 #!/bin/bash
@@ -85,14 +85,14 @@ echo "--------------------------------------------"
 check_submissions $submissions_file
 EOF
 
-# Populate startup.sh
+# startup.sh
 cat << 'EOF' > "$SUB_dir/startup.sh"
 #!/bin/bash
 echo "Starting Submission Reminder App..."
 ./app/reminder.sh
 EOF
 
-# Make scripts executable
+# execute the scripts
 chmod +x "$SUB_dir/modules/functions.sh"
 chmod +x "$SUB_dir/startup.sh"
 chmod +x "$SUB_dir/app/reminder.sh"
