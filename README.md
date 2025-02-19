@@ -1,4 +1,4 @@
-**# Submission Reminder App
+** Submission Reminder App
 This project is a shell script-based application designed to help students track their assignment submission deadlines and receive reminders.
 
 Features
