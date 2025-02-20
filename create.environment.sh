@@ -4,31 +4,31 @@
 read -p "Enter a name you prefer: " userName
 
 # Define main dir
-SUB_dir="submission_reminder_${userName}"
+T_dir="submission_reminder_${userName}"
 
 # Create directory one by one
-mkdir -p "$SUB_dir/config"
-mkdir -p "$SUB_dir/modules"
-mkdir -p "$SUB_dir/app"
-mkdir -p "$SUB_dir/assets"
+mkdir -p "$T_dir/config"
+mkdir -p "$T_dir/modules"
+mkdir -p "$T_dir/app"
+mkdir -p "$T_dir/assets"
 
-# Create needed files
-touch "$SUB_dir/config/config.env"
-touch "$SUB_dir/assets/submissions.txt"
-touch "$SUB_dir/app/reminder.sh"
-touch "$SUB_dir/modules/functions.sh"
-touch "$SUB_dir/startup.sh"
+# files
+touch "$T_dir/config/config.env"
+touch "$T_dir/assets/submissions.txt"
+touch "$T_dir/app/reminder.sh"
+touch "$T_dir/modules/functions.sh"
+touch "$T_dir/startup.sh"
 
 
 # config.env
-cat << EOF > "$SUB_dir/config/config.env"
+cat << EOF > "$T_dir/config/config.env"
 # This is the config file
 ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
 EOF
 
 # submissions.txt with some student records
-cat << EOF > "$SUB_dir/assets/submissions.txt"
+cat << EOF > "$T_dir/assets/submissions.txt"
 student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
 Chiagoziem, Git, submitted
@@ -41,7 +41,7 @@ Denyse, Shell Navigation, submitted
 EOF
 
 # functions.sh
-cat << 'EOF' > "$SUB_dir/modules/functions.sh"
+cat << 'EOF' > "$T_dir/modules/functions.sh"
 #!/bin/bash
 
 # Function to read submissions file and output students who have not submitted
@@ -66,7 +66,7 @@ cat << 'EOF' > "$SUB_dir/modules/functions.sh"
 EOF
 
 # reminder.sh
-cat << 'EOF' > "$SUB_dir/app/reminder.sh"
+cat << 'EOF' > "$T_dir/app/reminder.sh"
 #!/bin/bash
 #!/bin/bash
 
@@ -86,13 +86,13 @@ check_submissions $submissions_file
 EOF
 
 # startup.sh
-cat << 'EOF' > "$SUB_dir/startup.sh"
+cat << 'EOF' > "$T_dir/startup.sh"
 #!/bin/bash
 echo "Starting Submission Reminder App..."
 ./app/reminder.sh
 EOF
 
 # execute the scripts
-chmod +x "$SUB_dir/modules/functions.sh"
-chmod +x "$SUB_dir/startup.sh"
-chmod +x "$SUB_dir/app/reminder.sh"
+chmod +x "$T_dir/modules/functions.sh"
+chmod +x "$T_dir/startup.sh"
+chmod +x "$T_dir/app/reminder.sh"
