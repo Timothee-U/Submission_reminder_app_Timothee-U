@@ -16,7 +16,8 @@ Git installed
 Installation & Setup
 
 Clone the Repository
-git clone https://github.com/Timothee-U/submission_reminder_app_Timothee-Uwayesu
+git clone https://github.com/Timothee-U/submission_reminder_app_Timothee-U
+
 cd submission_reminder_app_Timothee-Uwayesu
 ----------
 Run Environment Setup
