@@ -21,8 +21,11 @@ git clone https://github.com/Timothee-U/submission_reminder_app_Timothee-U
 cd submission_reminder_app_Timothee-U
 ----------
 Run Environment Setup
+
 ./create_environment.sh
+
 Then enter a name you prefer
+
 This script will create the necessary directories and move files into place.
 -----------
 Go to the directory with the application
