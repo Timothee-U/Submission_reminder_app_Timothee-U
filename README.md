@@ -25,6 +25,7 @@ Then enter a name you prefer
 This script will create the necessary directories and move files into place.
 -----------
 Go to the directory with the application
+
 cd submission_reminder_(the name you entered)
 -----------
 Start the Application
